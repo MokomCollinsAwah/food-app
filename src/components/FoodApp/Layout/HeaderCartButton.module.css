@@ -1,0 +1,22 @@
+.button {
+    color: white;
+    background-color: #4d1601;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+}
+.cart {
+    align-items: flex-start;
+}
+.badge {
+    background-color:#8a2b06;
+    align-items: flex-end;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+    margin-left: 1rem;
+}
