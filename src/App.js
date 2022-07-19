@@ -1,22 +1,31 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/FoodApp/Layout/Header";
 import Meals from "./components/FoodApp/Meals/Meals";
 import Cart from "./components/FoodApp/Cart/Cart";
+import CartProvider from "./store/CartProvider";
 
 // import Login from "./components/Login/Login";
 // import Home from "./components/Home/Home";
 // import MainHeader from './components/MainHeader/MainHeader';
 
 function App() {
-  const [VisibleCart, setVisibleCart] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
-    <Fragment>
-      <Cart />
-      <Header />
+    <CartProvider>
+      {cartIsShown && <Cart onCloseCart={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
       </main>
-    </Fragment>
+    </CartProvider>
   );
 
   //UserAccount Application codes
